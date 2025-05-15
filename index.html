@@ -3,85 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>С Днем Рождения!</title>
+    <title>С Днем Рождения, Тимофей!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff5f5;
-            text-align: center;
-            padding: 20px;
-            color: #333;
+        :root {
+            --primary-color: #e91e63;
+            --secondary-color: #ff9800;
+            --accent-color: #9c27b0;
+            --text-color: #333;
+            --light-color: #fff9f9;
         }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #fff5f5, #f0f8ff);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .header {
+            width: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 30px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="10" y="50" font-family="Arial" font-size="20" fill="rgba(255,255,255,0.1)">🎉</text></svg>');
+            opacity: 0.3;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+        
+        h2 {
+            font-family: 'Marck Script', cursive;
+            font-size: 2.2rem;
+            margin: 10px 0 0;
+            color: white;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+        
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            flex-wrap: wrap;
         }
+        
+        .photo-frame {
+            width: 250px;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+            background: white;
+        }
+        
+        .photo-frame.left {
+            animation-delay: 0s;
+        }
+        
+        .photo-frame.right {
+            animation-delay: 0.5s;
+        }
+        
+        .photo-frame:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
         .photo {
-            width: 200px;
-            height: 300px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
         }
-        .poem {
-            font-size: 18px;
-            line-height: 1.6;
+        
+        .photo-frame:hover .photo {
+            transform: scale(1.05);
+        }
+        
+        .poem-container {
             max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
+        
+        .poem-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .poem {
+            font-family: 'Marck Script', cursive;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            text-align: center;
+            color: var(--text-color);
+            position: relative;
+        }
+        
+        .poem p {
+            margin: 20px 0;
+            position: relative;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        .poem p:nth-child(1) { animation-delay: 0.8s; }
+        .poem p:nth-child(2) { animation-delay: 1s; }
+        .poem p:nth-child(3) { animation-delay: 1.2s; }
+        
         .video-btn {
-            margin-top: 30px;
-            padding: 12px 25px;
-            font-size: 16px;
-            background-color: #ff6b6b;
+            margin: 40px 0;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
             color: white;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-out 1.5s both;
         }
+        
         .video-btn:hover {
-            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.6);
+        }
+        
+        .video-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .video-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .video-btn:hover::before {
+            left: 100%;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            opacity: 0;
+            z-index: 999;
+            animation: confettiFall 5s linear forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .footer {
+            margin-top: auto;
+            width: 100%;
+            padding: 20px 0;
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            color: white;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .photo-frame {
+                width: 200px;
+                height: 300px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .poem {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>С Днем Рождения! 🎉</h1>
-    <h1>Татарчук Тимофей Иванович</h1>
-    <div class="container">
-        <!-- Левая фотография (замените src на свою ссылку) -->
-        <img src="https://envs.sh/oYB.jpg" alt="" class="photo" id="left-photo">
-        
-        <div class="poem">
-            <p>С днем рождения поздравляю,<br>
-            И оргазмов пожелаю,<br>
-            Чтоб как трактор ты кончал,<br>
-            Струи счастья выпускал.</p>
-            
-            <p>Я желаю в день рождения,<br>
-            Секса, радости, веселья,<br>
-            Не грусти, не унывай,<br>
-            Жизнь в объятия принимай.</p>
-            
-            <p>Пусть улыбка прикоснется,<br>
-            Светит тебе ярко солнце,<br>
-            Радость льется через край,<br>
-            Не грусти и не скучай.</p>
-        </div>
-        
-        <!-- Правая фотография (замените src на свою ссылку) -->
-        <img src="https://envs.sh/oYT.jpg" alt="" class="photo" id="right-photo">
+    <div class="header">
+        <h1>С Днем Рождения!</h1>
+        <h2>Татарчук Тимофей Иванович</h2>
     </div>
     
-    <!-- Кнопка для видео (замените ссылку в onclick на свою) -->
-    <button class="video-btn" onclick="window.open('https://example.com/video.mp4', '_blank')">Посмотреть видео</button>
+    <div class="container">
+        <div class="photo-frame left">
+            <img src="https://envs.sh/oYB.jpg" alt="Фото именинника" class="photo">
+        </div>
+        
+        <div class="poem-container">
+            <div class="poem">
+                <p>С днем рождения поздравляю,<br>
+                И оргазмов пожелаю,<br>
+                Чтоб как трактор ты кончал,<br>
+                Струи счастья выпускал.</p>
+                
+                <p>Я желаю в день рождения,<br>
+                Секса, радости, веселья,<br>
+                Не грусти, не унывай,<br>
+                Жизнь в объятия принимай.</p>
+                
+                <p>Пусть улыбка прикоснется,<br>
+                Светит тебе ярко солнце,<br>
+                Радость льется через край,<br>
+                Не грусти и не скучай.</p>
+            </div>
+        </div>
+        
+        <div class="photo-frame right">
+            <img src="https://envs.sh/oYT.jpg" alt="Фото именинника" class="photo">
+        </div>
+    </div>
+    
+    <button class="video-btn" onclick="window.open('https://example.com/video.mp4', '_blank')">Посмотреть поздравление 🎬</button>
+    
+    <div class="footer">
+        Создано с ❤️ для самого лучшего именинника!
+    </div>
 
     <script>
-        // Можно динамически менять фото, если нужно
-        // document.getElementById('left-photo').src = "новая_ссылка.jpg";
+        // Создаем конфетти при загрузке страницы
+        function createConfetti() {
+            const colors = ['#e91e63', '#ff9800', '#9c27b0', '#2196f3', '#4caf50'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(confetti);
+            }
+        }
+        
+        // Запускаем конфетти при загрузке
+        window.addEventListener('load', () => {
+            createConfetti();
+            
+            // Можно добавить конфетти при нажатии на кнопку
+            document.querySelector('.video-btn').addEventListener('click', () => {
+                createConfetti();
+            });
+        });
+        
+        // Исправляем URL фото (у вас было https://)
+        document.addEventListener('DOMContentLoaded', function() {
+            const photos = document.querySelectorAll('.photo-frame img');
+            photos[0].src = 'https://envs.sh/oYB.jpg';
+            photos[1].src = 'https://envs.sh/oYT.jpg';
+        });
     </script>
 </body>
 </html>
