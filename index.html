@@ -3,197 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тимофей, с ДР!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>С Днем Рождения!</title>
     <style>
-        :root {
-            --bg-color: #121212;
-            --text-color: #e0e0e0;
-            --accent-color: #ff5e14;
-            --dark-accent: #cc4b10;
-            --card-bg: #1e1e1e;
-        }
-        
         body {
-            font-family: 'IBM Plex Mono', monospace;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            background-color: #fff5f5;
+            text-align: center;
+            padding: 20px;
+            color: #333;
         }
-        
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 1rem;
-        }
-        
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 0.5rem;
-        }
-        
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-color);
-            font-size: 1.8rem;
-            margin-top: 0;
-        }
-        
-        .content {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
+            align-items: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        
         .photo {
-            width: 300px;
-            height: 400px;
+            width: 200px;
+            height: 300px;
             object-fit: cover;
-            border: 5px solid var(--accent-color);
-            box-shadow: 0 0 20px rgba(255, 94, 20, 0.3);
-            transition: transform 0.3s;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
-        .photo:hover {
-            transform: scale(1.03);
-        }
-        
-        .poem-card {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-left: 5px solid var(--accent-color);
-            max-width: 500px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-        
         .poem {
-            font-size: 1.2rem;
-            white-space: pre-line;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 500px;
         }
-        
-        .poem p {
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-left: 1rem;
-        }
-        
-        .poem p::before {
-            content: "»";
-            color: var(--accent-color);
-            position: absolute;
-            left: -0.5rem;
-        }
-        
-        .btn-container {
-            text-align: center;
-            margin: 3rem 0;
-        }
-        
         .video-btn {
-            background-color: var(--accent-color);
-            color: #000;
+            margin-top: 30px;
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #ff6b6b;
+            color: white;
             border: none;
-            padding: 1rem 2.5rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 94, 20, 0.4);
-            font-weight: bold;
+            transition: background-color 0.3s;
         }
-        
         .video-btn:hover {
-            background-color: var(--dark-accent);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 94, 20, 0.6);
-        }
-        
-        .video-btn:active {
-            transform: translateY(1px);
-        }
-        
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid #333;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .photo {
-                width: 100%;
-                max-width: 300px;
-                height: auto;
-            }
+            background-color: #ff5252;
         }
     </style>
 </head>
 <body>
+    <h1>С Днем Рождения! 🎉</h1>
+    <h1>Татарчук Тимофей Иванович</h1>
     <div class="container">
-        <header>
-            <h1>С Днём Рождения</h1>
-            <h2>Татарчук Тимофей Иванович</h2>
-        </header>
+        <!-- Левая фотография (замените src на свою ссылку) -->
+        <img src="https://envs.sh/oYB.jpg" alt="" class="photo" id="left-photo">
         
-        <div class="content">
-            <img src="https://envs.sh/oYB.jpg" alt="Фото 1" class="photo">
+        <div class="poem">
+            <p>С днем рождения поздравляю,<br>
+            И оргазмов пожелаю,<br>
+            Чтоб как трактор ты кончал,<br>
+            Струи счастья выпускал.</p>
             
-            <div class="poem-card">
-                <div class="poem">
-<p>С днем рождения поздравляю,
-И оргазмов пожелаю,
-Чтоб как трактор ты кончал,
-Струи счастья выпускал.</p>
-
-<p>Я желаю в день рождения,
-Секса, радости, веселья,
-Не грусти, не унывай,
-Жизнь в объятия принимай.</p>
-
-<p>Пусть улыбка прикоснется,
-Светит тебе ярко солнце,
-Радость льется через край,
-Не грусти и не скучай.</p>
-                </div>
-            </div>
+            <p>Я желаю в день рождения,<br>
+            Секса, радости, веселья,<br>
+            Не грусти, не унывай,<br>
+            Жизнь в объятия принимай.</p>
             
-            <img src="https://envs.sh/oYT.jpg" alt="Фото 2" class="photo">
+            <p>Пусть улыбка прикоснется,<br>
+            Светит тебе ярко солнце,<br>
+            Радость льется через край,<br>
+            Не грусти и не скучай.</p>
         </div>
         
-        <div class="btn-container">
-            <button class="video-btn" onclick="window.open('https://example.com/video.mp4', '_blank')">СМОТРЕТЬ ВИДЕО</button>
-        </div>
+        <!-- Правая фотография (замените src на свою ссылку) -->
+        <img src="https://envs.sh/oYT.jpg" alt="" class="photo" id="right-photo">
     </div>
     
-    <footer>
-        © Создано специально для Тимофея | 2023
-    </footer>
+    <!-- Кнопка для видео (замените ссылку в onclick на свою) -->
+    <button class="video-btn" onclick="window.open('https://envs.sh/oYO.mp4', '_blank')">Посмотреть видео</button>
+
+    <script>
+        // Можно динамически менять фото, если нужно
+        // document.getElementById('left-photo').src = "новая_ссылка.jpg";
+    </script>
 </body>
 </html>
