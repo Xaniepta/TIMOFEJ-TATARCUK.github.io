@@ -7,10 +7,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff5f5;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             text-align: center;
             padding: 20px;
             color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .container {
             display: flex;
@@ -19,6 +22,7 @@
             gap: 20px;
             max-width: 1000px;
             margin: 0 auto;
+            flex: 1;
         }
         .photo {
             width: 200px;
@@ -36,7 +40,7 @@
             margin-top: 30px;
             padding: 12px 25px;
             font-size: 16px;
-            background-color: #ff6b6b;
+            background-color: #4e54c8;
             color: white;
             border: none;
             border-radius: 50px;
@@ -44,7 +48,13 @@
             transition: background-color 0.3s;
         }
         .video-btn:hover {
-            background-color: #ff5252;
+            background-color: #6a71d6;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 14px;
+            color: #666;
         }
     </style>
 </head>
@@ -79,17 +89,14 @@
     <!-- Кнопка для видео (замените ссылку в onclick на свою) -->
     <button class="video-btn" onclick="window.open('https://envs.sh/oYO.mp4', '_blank')">Посмотреть видео</button>
 
+    <footer>
+        © Создано специально для Тимофея | 2025<br>
+        От Кирилла, Данила, Никиты
+    </footer>
+
     <script>
         // Можно динамически менять фото, если нужно
         // document.getElementById('left-photo').src = "новая_ссылка.jpg";
     </script>
-</div>
-</div>
-</div>
-</div>
-</div>
-    <footer>
-        © Создано специально для Тимофея | 2025 
-    </footer>
 </body>
 </html>
