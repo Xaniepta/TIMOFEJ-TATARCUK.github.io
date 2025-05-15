@@ -17,6 +17,10 @@
             padding: 20px;
             box-sizing: border-box;
         }
+        h1 {
+            font-size: calc(16px + 2vw);
+            margin: 10px 0;
+        }
         .container {
             display: flex;
             justify-content: center;
@@ -25,6 +29,7 @@
             max-width: 1000px;
             margin: 0 auto;
             flex: 1;
+            flex-wrap: wrap;
         }
         .photo {
             width: 200px;
@@ -32,14 +37,16 @@
             object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
         }
         .poem {
             font-size: 18px;
             line-height: 1.6;
             max-width: 500px;
+            padding: 0 15px;
         }
         .video-btn {
-            margin-top: 30px;
+            margin: 30px auto;
             padding: 12px 25px;
             font-size: 16px;
             background-color: #ff6b6b;
@@ -48,6 +55,7 @@
             border-radius: 50px;
             cursor: pointer;
             transition: background-color 0.3s;
+            display: block;
         }
         .video-btn:hover {
             background-color: #ff5252;
@@ -57,13 +65,43 @@
             padding: 20px;
             font-size: 14px;
         }
+        a {
+            color: #ff6b6b;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #ff5252;
+        }
+
+        /* Мобильная адаптация */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .photo {
+                width: 150px;
+                height: 225px;
+            }
+            .poem {
+                font-size: 16px;
+                order: 3;
+                width: 100%;
+            }
+            #left-photo {
+                order: 1;
+            }
+            #right-photo {
+                order: 2;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>С Днем Рождения! 🎉</h1>
     <h1>Татарчук Тимофей Иванович</h1>
     <div class="container">
-        <!-- Левая фотография (замените src на свою ссылку) -->
+        <!-- Левая фотография -->
         <img src="https://envs.sh/oYB.jpg" alt="" class="photo" id="left-photo">
         
         <div class="poem">
@@ -83,25 +121,17 @@
             Не грусти и не скучай.</p>
         </div>
         
-        <!-- Правая фотография (замените src на свою ссылку) -->
+        <!-- Правая фотография -->
         <img src="https://envs.sh/oYT.jpg" alt="" class="photo" id="right-photo">
     </div>
     
-    <!-- Кнопка для видео (замените ссылку в onclick на свою) -->
+    <!-- Кнопка для видео -->
     <button class="video-btn" onclick="window.open('https://envs.sh/oYO.mp4', '_blank')">Посмотреть видео</button>
 
     <footer>
-    © Создано специально для Тимофея | 2025<br>
-    От Кирилла, Данила, Никиты, Андрея<br>
-    Создатель: <a href="https://t.me/sova_1337" target="_blank" 
-                style="color: #ff6b6b; text-decoration: none; transition: color 0.3s;"
-                onmouseover="this.style.color='#ff5252'" 
-                onmouseout="this.style.color='#ff6b6b'">https://t.me/sova_1337</a>
-</footer>
-
-    <script>
-        // Можно динамически менять фото, если нужно
-        // document.getElementById('left-photo').src = "новая_ссылка.jpg";
-    </script>
+        © Создано специально для Тимофея | 2025<br>
+        От Кирилла, Данила, Никиты, Андрея<br>
+        Создатель: <a href="https://t.me/sova_1337" target="_blank">https://t.me/sova_1337</a>
+    </footer>
 </body>
 </html>
