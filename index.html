@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днем Рождения!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff5f5;
+            text-align: center;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .photo {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .poem {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+        .video-btn {
+            margin-top: 30px;
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .video-btn:hover {
+            background-color: #ff5252;
+        }
+    </style>
+</head>
+<body>
+    <h1>С Днем Рождения! 🎉</h1>
+    
+    <div class="container">
+        <!-- Левая фотография (замените src на свою ссылку) -->
+        <img src="https://example.com/photo1.jpg" alt="Фото 1" class="photo" id="left-photo">
+        
+        <div class="poem">
+            <p>С днем рождения поздравляю,<br>
+            И оргазмов пожелаю,<br>
+            Чтоб как трактор ты кончал,<br>
+            Струи счастья выпускал.</p>
+            
+            <p>Я желаю в день рождения,<br>
+            Секса, радости, веселья,<br>
+            Не грусти, не унывай,<br>
+            Жизнь в объятия принимай.</p>
+            
+            <p>Пусть улыбка прикоснется,<br>
+            Светит тебе ярко солнце,<br>
+            Радость льется через край,<br>
+            Не грусти и не скучай.</p>
+        </div>
+        
+        <!-- Правая фотография (замените src на свою ссылку) -->
+        <img src="https://example.com/photo2.jpg" alt="Фото 2" class="photo" id="right-photo">
+    </div>
+    
+    <!-- Кнопка для видео (замените ссылку в onclick на свою) -->
+    <button class="video-btn" onclick="window.open('https://example.com/video.mp4', '_blank')">Посмотреть видео</button>
+
+    <script>
+        // Можно динамически менять фото, если нужно
+        // document.getElementById('left-photo').src = "новая_ссылка.jpg";
+    </script>
+</body>
+</html>
